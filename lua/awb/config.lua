@@ -4,6 +4,9 @@ M.defaults = {
 	api_key = nil,
 	provider = "gemini",
 	model = "gemini-2.5-flash",
+	keymaps = {
+		ask = { "<leader>a", { "n", "v" } },
+	},
 }
 
 M.current = vim.deepcopy(M.defaults)

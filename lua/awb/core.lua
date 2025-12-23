@@ -1,7 +1,7 @@
 local M = {}
-local api = require("aiwb.api")
-local ui = require("aiwb.ui")
-local config = require("aiwb.config")
+local api = require("awb.api")
+local ui = require("awb.ui")
+local config = require("awb.config")
 
 function M.get_context()
 	local mode = vim.fn.mode()
@@ -29,7 +29,7 @@ function M.get_context()
 	}
 end
 
-function M.run()
+function M.ask()
 	local bufnr = vim.api.nvim_get_current_buf()
 	local cursor = vim.api.nvim_win_get_cursor(0)
 	local line = cursor[1]
