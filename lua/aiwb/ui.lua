@@ -25,7 +25,7 @@ function M.start_spinner(bufnr, line)
 
 	spinner_timer = vim.loop.new_timer()
 	spinner_timer:start(0, 80, vim.schedule_wrap(function()
-		if not vim.api.nvim_buf_is_valid(bufnr) then
+		if not spinner_line or not vim.api.nvim_buf_is_valid(bufnr) then
 			M.stop_spinner()
 			return
 		end
