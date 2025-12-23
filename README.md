@@ -21,7 +21,7 @@ require("aiwb").setup({
 })
 ```
 
-## Keybinds
+## Default Keybindings
 ```
 <leader>a    opens prompt dialogue
 ```
