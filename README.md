@@ -1,6 +1,8 @@
 # Ask Without Bloat
 Neovim plugin for quick in-file AI help. Code or comments are generated from your visual selection and written right under your cursor. If no selection is made the hovered line is used instead. The whole file is always in context.
 
+![Demo GIF](https://github.com/novrion/awb.nvim/assets/demo.gif)
+
 ## Requirements
 - [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 - Gemini API Key
