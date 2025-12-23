@@ -1,20 +1,7 @@
 local M = {}
-local api = require("aiwb.api")
-local ui = require("aiwb.ui")
-local insert = require("aiwb.insert")
-
-M.config = {
-	api_key = nil,
-	provider = "gemini",
-	model = "gemini-2.5-flash",
-}
-
-function M.setup(opts)
-	M.config = vim.tbl_deep_extend("force", M.config, opts or {})
-
-	-- default keybinding
-	vim.keymap.set({ "n", "v" }, "<leader>a", M.run, { desc = "AIWB: AI prompt" })
-end
+local api = require("awb.api")
+local ui = require("awb.ui")
+local config = require("awb.config")
 
 function M.get_context()
 	local mode = vim.fn.mode()
@@ -42,7 +29,7 @@ function M.get_context()
 	}
 end
 
-function M.run()
+function M.ask()
 	local bufnr = vim.api.nvim_get_current_buf()
 	local cursor = vim.api.nvim_win_get_cursor(0)
 	local line = cursor[1]
@@ -56,7 +43,7 @@ function M.run()
 		-- start spinner at line under cursor
 		ui.start_spinner(bufnr, line)
 
-		api.call_gemini(prompt, context, filetype, M.config, function(response, err)
+		api.call_gemini(prompt, context, filetype, config.get(), function(response, err)
 			ui.stop_spinner()
 
 			if err then
@@ -64,7 +51,7 @@ function M.run()
 				return
 			end
 
-			insert.insert_response(bufnr, line, response)
+			ui.insert_response(bufnr, line, response)
 		end)
 	end)
 end
