@@ -47,7 +47,7 @@ function M.ask()
 			ui.stop_spinner()
 
 			if err then
-				vim.notify("AIWB Error: " .. err, vim.log.levels.ERROR)
+				vim.notify("AWB Error: " .. err, vim.log.levels.ERROR)
 				return
 			end
 

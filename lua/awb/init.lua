@@ -10,7 +10,7 @@ function M.setup(opts)
 	if cfg.keymaps and cfg.keymaps.ask then
 		local key = cfg.keymaps.ask[1]
 		local modes = cfg.keymaps.ask[2] or { "n", "v" }
-		vim.keymap.set(modes, key, core.ask, { desc = "prompt AI (Without Bloat)" })
+		vim.keymap.set(modes, key, core.ask, { desc = "ask AI (Without Bloat)" })
 	end
 end
 
