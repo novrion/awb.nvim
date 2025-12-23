@@ -6,7 +6,7 @@ local spinner_bufnr = nil
 local spinner_line = nil
 
 function M.show_prompt(callback)
-	vim.ui.input({ prompt = "AIWB> " }, function(input)
+	vim.ui.input({ prompt = "> " }, function(input)
 		if input and input ~= "" then
 			vim.schedule(function()
 				callback(input)
