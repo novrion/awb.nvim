@@ -37,14 +37,14 @@ Context (current file):
 
 	local url = string.format(
 		"https://generativelanguage.googleapis.com/v1beta/models/%s:generateContent?key=%s",
-		config.model or "gemini-2.5-flash",
+		config.model or "gemini-3-flash-preview",
 		api_key
 	)
 
 	local body = vim.fn.json_encode({
 		contents = { { parts = { { text = full_prompt } } } },
 		systemInstruction = { parts = { { text = system_prompt } } },
-		generationConfig = { temperature = 0.3, maxOutputTokens = 4096 }
+		generationConfig = { temperature = 0.3 } --, maxOutputTokens = 4096 }
 	})
 
 	curl.post(url, {

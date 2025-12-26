@@ -15,7 +15,7 @@ vim.pack.add({
 })
 
 require("awb").setup({
-    model = "gemini-2.5-flash", -- optional, default (currently only gemini models supported)
+    model = "gemini-3-flash-preview", -- optional, default (currently only gemini models supported)
     api_key = "<your_api_key>",
     keymaps = {
 		ask = { "<leader>a", { "n", "v" } }, -- optional

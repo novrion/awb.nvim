@@ -3,7 +3,7 @@ local M = {}
 M.defaults = {
 	api_key = nil,
 	provider = "gemini",
-	model = "gemini-2.5-flash",
+	model = "gemini-3-flash-preview",
 	keymaps = {
 		ask = { "<leader>a", { "n", "v" } },
 	},
